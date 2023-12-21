@@ -11,9 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sermons', function (Blueprint $table) {
+        Schema::create('speakers', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('title')->default('Pastoor');
+            $table->string('name_first');
+            $table->string('name_last');
         });
     }
 
@@ -22,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sermons');
+        Schema::dropIfExists('speakers');
     }
 };
